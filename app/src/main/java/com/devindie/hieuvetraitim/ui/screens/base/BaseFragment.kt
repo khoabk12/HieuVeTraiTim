@@ -11,8 +11,8 @@ import androidx.viewbinding.ViewBinding
 
 
 abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
-    protected var binding: VB? = null
 
+    protected var binding: VB? = null
     abstract val viewModelClass: Class<VM>
     protected val viewModel: VM by lazy {
         ViewModelProvider(this)[viewModelClass]
@@ -33,7 +33,4 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
         binding: VB?
     ): View?
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 }

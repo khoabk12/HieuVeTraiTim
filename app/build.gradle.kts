@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.devindie.hieuvetraitim"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.devindie.hieuvetraitim"
@@ -58,7 +58,10 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-appcheck-playintegrity")
     implementation("com.google.firebase:firebase-appcheck-ktx")
+    implementation("com.google.firebase:firebase-database-ktx")
 
     val fragment_version = "1.6.1"
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 }
