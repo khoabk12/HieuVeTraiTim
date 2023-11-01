@@ -2,4 +2,6 @@
     <string name="app_name">HieuVeTraiTim</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="prompt_question_home_screen">How do you feel right now?</string>
+    <string name="prompt_answer_home_screen">I feel </string>
 </resources>

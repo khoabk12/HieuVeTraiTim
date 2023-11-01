@@ -23,14 +23,18 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflateView(inflater, container, savedInstanceState, binding)
+        binding = inflateView(inflater, container, savedInstanceState)
+        return binding?.root
     }
 
     abstract fun inflateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
-        binding: VB?
-    ): View?
+    ): VB?
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
+    }
 }
