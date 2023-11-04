@@ -91,3 +91,7 @@ object VNCharacterUtils {
         return sb.toString()
     }
 }
+
+fun Int.colorIntToHex(): Int {
+    return String.format("#%06X", 0xFFFFFF and this).toInt()
+}
