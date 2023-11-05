@@ -38,6 +38,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     }
 
     private fun viewBindingListeners() {
+        binding?.fabNext?.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment()
+            navController.navigate(action)
+        }
         binding?.edtEmotion?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 

@@ -71,8 +71,6 @@ class HomeViewModel : BaseViewModel() {
                         } else {
                             it?.mutedSwatch?.rgb
                         } ?: 0
-                        log("lightVibrant: ${lightVibrant}")
-                        log("darkMute: ${darkMute}")
                         _emotionBackgroundColors.postValue(arrayOf(lightVibrant, darkMute))
                     }
                 } catch (e: Exception) {

@@ -8,7 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.devindie.hieuvetraitim.R
+import com.devindie.hieuvetraitim.ui.screens.MainActivity
 
 
 abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
@@ -17,6 +24,16 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
     abstract val viewModelClass: Class<VM>
     protected val viewModel: VM by lazy {
         ViewModelProvider(this)[viewModelClass]
+    }
+
+    protected val mainActivity by lazy {
+        requireActivity() as MainActivity
+    }
+
+
+    protected val navController: NavController by lazy {
+        val navHostFragment = mainActivity.supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
+        navHostFragment.navController
     }
 
     override fun onCreateView(
@@ -28,6 +45,9 @@ abstract class BaseFragment<VM : ViewModel, VB : ViewBinding> : Fragment() {
         return binding?.root
     }
 
+    /**
+     * [ViewBinding].inflate(inflater, container, false)
+     */
     abstract fun inflateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

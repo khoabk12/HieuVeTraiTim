@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -55,7 +56,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
 
     // Add the dependencies for the App Check libraries
-    // When using the BoM, you don't specify versions in Firebase library dependencies
+    // When using the BoM, you don't speify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-appcheck-playintegrity")
     implementation("com.google.firebase:firebase-appcheck-ktx")
     implementation("com.google.firebase:firebase-database-ktx")
@@ -71,5 +72,15 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.14.2")
     // Skip this if you don't want to use integration libraries or configure Glide.
     annotationProcessor("com.github.bumptech.glide:compiler:4.14.2")
+
+    //Navigation
+    val nav_version = "2.7.5"
+    // Kotlin
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    // Feature module Support
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+    // Testing Navigation
+    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
 
 }

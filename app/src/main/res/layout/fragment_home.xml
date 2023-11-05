@@ -41,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
         app:layout_constraintVertical_bias="0.32" />
 
-    <com.devindie.hieuvetraitim.ui.commons.AnimatedPlaceholderAppCompatEditText
+    <com.devindie.hieuvetraitim.ui.commons.EmotionAutoCompleteTextView
         android:id="@+id/edt_emotion"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -54,4 +54,13 @@
         app:layout_constraintEnd_toEndOf="@+id/appCompatTextView"
         app:layout_constraintStart_toEndOf="@+id/appCompatTextView2"
         app:layout_constraintTop_toTopOf="@+id/appCompatTextView2" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="48dp"
+        android:src="@drawable/baseline_keyboard_arrow_right_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
